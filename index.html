@@ -99,14 +99,20 @@
   </div>
   
   <audio id="sec">
-    <source src="music.m4a" type="audio/mp4">
-  </audio>
-  
-  <script>
-    function playAudio() {
-      var audio = document.getElementById("sec");
-      audio.play();
-    }
+  <source src="music.m4a" type="audio/mp4">
+</audio>
+
+<audio id="music2">
+  <source src="music2.mp4" type="audio/mp4">
+</audio>
+
+<script>
+  var audio1 = document.getElementById("music2");
+  var audio2 = document.getElementById("sec");
+
+  audio1.onended = function() {
+    audio2.play();
+  };
     
     var love = setInterval(function(){
       var r_num = Math.floor(Math.random() * 40) + 1;
@@ -140,8 +146,8 @@ function typeWriter() {
   }
 }
     
-    setTimeout(playAudio, 3000); /* Delay audio play */
-    setTimeout(typeWriter, 4000); /* Delay text typing */
+    setTimeout(playAudio, 300); /* Delay audio play */
+    setTimeout(typeWriter, 8000); /* Delay text typing */
   </script>
 </body>
 </html>
